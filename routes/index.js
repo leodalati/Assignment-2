@@ -12,13 +12,13 @@ router.get('/home', function(req, res, next) {
 });
 
 /* GET AboutMe page. */
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About Me' });
+router.get('/aboutMe', function(req, res, next) {
+  res.render('aboutMe', { title: 'About Me' });
 });
 
 /* GET projects page. */
 router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Projects' });
+  res.render('projects', { title: 'Projects' });
 });
 
 /* GET contactMe page. */

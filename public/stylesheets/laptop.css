@@ -1,0 +1,4 @@
+body{ /*sizing for laptop*/
+    font-size: 18px;
+    width: 100%; /* Should be around 80-90% but for simplicity and aesthetic purposes i kept at 100 so that my screen wouldnt look uneven */
+}

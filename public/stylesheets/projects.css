@@ -1,0 +1,33 @@
+@charset "UTF-8";
+body {
+
+  background: color(srgb rgb(66, 66, 66) rgb(83, 83, 83) rgb(70, 70, 70));
+  background: linear-gradient(to right, #EDEA51, #75ED51,#B7ED51,#EDD751,#0EF52F, #D2EDA0); /*linear gradient effect to right*/
+}
+
+h1{
+  margin-left: 40px;
+  margin-bottom: 50px;
+}
+h4{
+  margin-left: 40px;
+}
+
+nav {
+    text-align: center;
+    font-size: x-large;
+    
+    
+}
+nav a:hover {
+  color: darkblue;
+}
+
+nav a{
+    padding: 15px;
+    margin-right: 24px;
+    color: blue;
+}
+body {
+  padding-top: 50px;
+}
