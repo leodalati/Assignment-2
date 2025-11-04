@@ -1,50 +1,115 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title><%= title %></title>
+<%- include('partials/header') %>
 
-  <!-- Bootstrap and FontAwesome -->
-  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  
-  <!-- Optional custom styles -->
-  <link rel="stylesheet" href="/stylesheets/home.css">
-  
-  <!-- Scripts -->
-  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-
-<body>
-  <!-- NAVIGATION BAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/home">Leo's Page</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="/home"><i class="fa-solid fa-house"></i> Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/aboutMe">About Me</a></li>
-          <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- MAIN PAGE CONTENT -->
-  <div id="wrapper" class="text-center mt-5">
-    <h1>Welcome to Leo's Website</h1>
-    <p>This is my personal portfolio built with Express and EJS.</p>
+<!-- HOME SECTION -->
+<section id="home" class="py-5 text-center bg-light">
+  <div class="container">
+    <h1>Welcome to Leo's Portfolio</h1>
+    <p>This is my personal website built with Express and EJS.</p>
   </div>
+</section>
 
-  <script src="/javascripts/start.js"></script>
-</body>
-</html>
+<!-- ABOUT ME SECTION -->
+ <section id="about" class="py-5 bg-white">
+  <div class="container mt-4" id="wrapper">
+    <h1>Little about myself</h1>
+
+    <figure class="text-center">
+      <h2>This is a picture of me!</h2>
+      <img src="/images/photo of me.jpg" width="150" height="200" class="rounded" alt="Photo of me">
+      <figcaption>
+        <p class="mt-3">
+          I am 18 years old and I like to spend my time staying active and in good shape.
+          I play sports such as pickleball, soccer, basketball and many others.
+        </p>
+      </figcaption>
+    </figure>
+
+    <div class="text-center">
+      <h2>Here is a video of me talking about myself and my lifestyle.</h2>
+      <video id="video" width="480" height="360" controls poster="/images/photo of me.jpg" preload="auto">
+        <source src="/videos/VideoOfMyselfR.mp4" type="video/mp4">
+      </video>
+      <br>
+      <button onclick="playPause()" class="btn btn-primary mt-2">Play/Pause Video</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="py-5 bg-light">
+  <div class="container mt-4" id="wrapper">
+  <h1>Here are some projects I have worked on while studying at OTU</h1>
+
+  <h3>#1: A1 for Writing and Critical Thinking</h3>
+  <p>
+    Carefully read the AI-generated essay provided in class, "The Impact of AI in Education."
+    As you read, think about the key points, arguments, and any questions or thoughts that come to mind.
+  </p>
+
+  <h3>#2: Final Project – Intro to Networking</h3>
+  <p>
+    Build network topology and configure IP addresses according to the addressing tables.
+    Subnet to minimize address wastage.
+  </p>
+
+  <h3>#3: Computer Architecture Final Project</h3>
+  <p>
+    Implement a simple arithmetic calculator using an ARMv7 simulator and a Fibonacci sequence generator using a RISC-V simulator.
+  </p>
+
+  <h3>#4: A1 for Discrete Math</h3>
+  <p>
+    Translate English sentences into formal logic formulas, test logical relationships,
+    and solve reasoning puzzles using truth tables and algebraic proofs.
+  </p>
+</div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-5 bg-white">
+  <!-- Contact Form -->
+  <div class="container mt-4" id="wrapper">
+    <h1>Contact Me</h1>
+    <p>Please fill out this form to send me your feedback or message.</p>
+
+    <form action="mailto:leo.dalati@ontariotechu.net?subject=Feedback from website"
+          enctype="text/plain" method="post" name="FeedbackForm">
+
+      <div class="mb-3">
+        <label for="FName" class="form-label">First Name:</label>
+        <input type="text" name="FName" class="form-control" placeholder="Enter your first name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="LName" class="form-label">Last Name:</label>
+        <input type="text" name="LName" class="form-control" placeholder="Enter your last name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="Email" class="form-label">Email:</label>
+        <input type="email" name="Email" class="form-control" placeholder="Enter your email address" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Cell phone:</label>
+        <input type="tel" name="phone" class="form-control" placeholder="Enter your phone number" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+            </p>
+            <p>
+                <label for="comments">Comments: </label>
+                <br>
+                <textarea name="comments" cols="60" rows="8"></textarea> <!--bigger text area for comments-->
+            </p>
+                </datalist>
+                <br><br>
+                <input type="reset" value="Reset"> <!--Reset button-->
+                <input type="submit" value="Submit"> <!--Submit button-->
+            </p>
+            </form>
+            <footer>
+                <p>Contact: <a href="mailto:leo.dalati@ontariotechu.net">leo.dalati@ontariotechu.net</a></p>
+                <p>&copy; 2025 My Website. All rights reserved.</p> <!--displaying contact and copyrights-->
+            </footer>
+        </div>
+</section>
+
+<%- include('partials/footer') %>
