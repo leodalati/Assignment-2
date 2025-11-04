@@ -22,8 +22,8 @@ router.get('/projects', function(req, res, next) {
 });
 
 /* GET contactMe page. */
-router.get('/contactMe', function(req, res, next) {
-  res.render('index', { title: 'Contact Me' });
+router.get('/contact', function(req, res, next) {
+  res.render('contact', { title: 'Contact Me' });
 });
 
 module.exports = router;
